@@ -1,0 +1,145 @@
+use("Produtos")
+db.informatica.drop()
+const informatica = [
+  {
+    "produto": "Smartphone",
+    "marca": "Samsung",
+    "preco": 799.99,
+    "estoque": 50,
+    "cor": "Preto"
+  },
+  {
+    "produto": "Notebook",
+    "marca": "Dell",
+    "preco": 1299.99,
+    "estoque": 30,
+    "cor": "Prata"
+  },
+  {
+    "produto": "Tablet",
+    "marca": "Apple",
+    "preco": 499.99,
+    "estoque": 20,
+    "cor": "Cinza"
+  },
+  {
+    "produto": "Fones de Ouvido",
+    "marca": "Sony",
+    "preco": 79.99,
+    "estoque": 100,
+    "cor": "Branco"
+  },
+  {
+    "produto": "Câmera Digital",
+    "marca": "Canon",
+    "preco": 599.99,
+    "estoque": 15,
+    "cor": "Preto"
+  },
+  {
+    "produto": "Televisão",
+    "marca": "LG",
+    "preco": 899.99,
+    "estoque": 25,
+    "cor": "Prata"
+  },
+  {
+    "produto": "Impressora",
+    "marca": "Epson",
+    "preco": 199.99,
+    "estoque": 40,
+    "cor": "Branco"
+  },
+  {
+    "produto": "Console de Jogos",
+    "marca": "Microsoft",
+    "preco": 299.99,
+    "estoque": 10,
+    "cor": "Preto"
+  },
+  {
+    "produto": "Mouse sem Fio",
+    "marca": "Logitech",
+    "preco": 29.99,
+    "estoque": 75,
+    "cor": "Preto"
+  },
+  {
+    "produto": "Teclado Mecânico",
+    "marca": "Razer",
+    "preco": 119.99,
+    "estoque": 50,
+    "cor": "Preto"
+  },
+  {
+    "produto": "Caixa de Som Bluetooth",
+    "marca": "JBL",
+    "preco": 69.99,
+    "estoque": 60,
+    "cor": "Vermelho"
+  },
+  {
+    "produto": "Máquina de Lavar Roupa",
+    "marca": "Whirlpool",
+    "preco": 499.99,
+    "estoque": 20,
+    "cor": "Branco"
+  },
+  {
+    "produto": "Liquidificador",
+    "marca": "Philips",
+    "preco": 49.99,
+    "estoque": 90,
+    "cor": "Azul"
+  },
+  {
+    "produto": "Mochila",
+    "marca": "North Face",
+    "preco": 79.99,
+    "estoque": 30,
+    "cor": "Verde"
+  },
+  {
+    "produto": "Sapatos de Corrida",
+    "marca": "Nike",
+    "preco": 129.99,
+    "estoque": 40,
+    "cor": "Branco"
+  },
+  {
+    "produto": "Relógio de Pulso",
+    "marca": "Casio",
+    "preco": 59.99,
+    "estoque": 70,
+    "cor": "Preto"
+  },
+  {
+    "produto": "Fogão a Gás",
+    "marca": "Brastemp",
+    "preco": 399.99,
+    "estoque": 15,
+    "cor": "Inox"
+  },
+  {
+    "produto": "Panela de Pressão",
+    "marca": "Tramontina",
+    "preco": 39.99,
+    "estoque": 50,
+    "cor": "Vermelho"
+  },
+  {
+    "produto": "Cadeira de Escritório",
+    "marca": "Herman Miller",
+    "preco": 499.99,
+    "estoque": 10,
+    "cor": "Preto"
+  },
+  {
+    "produto": "Bicicleta de Montanha",
+    "marca": "Trek",
+    "preco": 699.99,
+    "estoque": 20,
+    "cor": "Vermelho"
+  }
+]
+db.informatica.insertMany(informatica)
