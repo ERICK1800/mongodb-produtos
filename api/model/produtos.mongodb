@@ -6,140 +6,201 @@ const informatica = [
     "marca": "Samsung",
     "preco": 799.99,
     "estoque": 50,
-    "cor": "Preto"
+    "cor": "Preto",
+    "data_lancamento": "2023-09-25",
+    "classificacao": 4,
+    "peso": 0.35
   },
   {
     "produto": "Notebook",
     "marca": "Dell",
     "preco": 1299.99,
     "estoque": 30,
-    "cor": "Prata"
+    "cor": "Prata",
+    "data_lancamento": "2023-08-15",
+    "classificacao": 5,
+    "peso": 1.2
   },
   {
     "produto": "Tablet",
     "marca": "Apple",
     "preco": 499.99,
     "estoque": 20,
-    "cor": "Cinza"
+    "cor": "Cinza",
+    "data_lancamento": "2023-07-10",
+    "classificacao": 4,
+    "peso": 0.5
   },
   {
     "produto": "Fones de Ouvido",
     "marca": "Sony",
     "preco": 79.99,
     "estoque": 100,
-    "cor": "Branco"
+    "cor": "Branco",
+    "data_lancamento": "2023-06-20",
+    "classificacao": 4,
+    "peso": 0.1
   },
   {
     "produto": "Câmera Digital",
     "marca": "Canon",
     "preco": 599.99,
     "estoque": 15,
-    "cor": "Preto"
+    "cor": "Preto",
+    "data_lancamento": "2023-05-05",
+    "classificacao": 5,
+    "peso": 0.8
   },
   {
     "produto": "Televisão",
     "marca": "LG",
     "preco": 899.99,
     "estoque": 25,
-    "cor": "Prata"
+    "cor": "Prata",
+    "data_lancamento": "2023-04-10",
+    "classificacao": 4,
+    "peso": 7.0
   },
   {
     "produto": "Impressora",
     "marca": "Epson",
     "preco": 199.99,
     "estoque": 40,
-    "cor": "Branco"
+    "cor": "Branco",
+    "data_lancamento": "2023-03-22",
+    "classificacao": 3,
+    "peso": 4.5
   },
   {
     "produto": "Console de Jogos",
     "marca": "Microsoft",
     "preco": 299.99,
     "estoque": 10,
-    "cor": "Preto"
+    "cor": "Preto",
+    "data_lancamento": "2023-02-15",
+    "classificacao": 5,
+    "peso": 2.2
   },
   {
     "produto": "Mouse sem Fio",
     "marca": "Logitech",
     "preco": 29.99,
     "estoque": 75,
-    "cor": "Preto"
+    "cor": "Preto",
+    "data_lancamento": "2023-01-08",
+    "classificacao": 4,
+    "peso": 0.15
   },
   {
     "produto": "Teclado Mecânico",
     "marca": "Razer",
     "preco": 119.99,
     "estoque": 50,
-    "cor": "Preto"
+    "cor": "Preto",
+    "data_lancamento": "2022-12-20",
+    "classificacao": 5,
+    "peso": 1.1
   },
   {
     "produto": "Caixa de Som Bluetooth",
     "marca": "JBL",
     "preco": 69.99,
     "estoque": 60,
-    "cor": "Vermelho"
+    "cor": "Vermelho",
+    "data_lancamento": "2022-11-15",
+    "classificacao": 4,
+    "peso": 0.8
   },
   {
     "produto": "Máquina de Lavar Roupa",
     "marca": "Whirlpool",
     "preco": 499.99,
     "estoque": 20,
-    "cor": "Branco"
+    "cor": "Branco",
+    "data_lancamento": "2022-10-10",
+    "classificacao": 4,
+    "peso": 48.0
   },
   {
     "produto": "Liquidificador",
     "marca": "Philips",
     "preco": 49.99,
     "estoque": 90,
-    "cor": "Azul"
+    "cor": "Azul",
+    "data_lancamento": "2022-09-05",
+    "classificacao": 3,
+    "peso": 2.0
   },
   {
     "produto": "Mochila",
     "marca": "North Face",
     "preco": 79.99,
     "estoque": 30,
-    "cor": "Verde"
+    "cor": "Verde",
+    "data_lancamento": "2022-08-01",
+    "classificacao": 4,
+    "peso": 0.7
   },
   {
     "produto": "Sapatos de Corrida",
     "marca": "Nike",
     "preco": 129.99,
     "estoque": 40,
-    "cor": "Branco"
+    "cor": "Branco",
+    "data_lancamento": "2022-07-15",
+    "classificacao": 5,
+    "peso": 0.3
   },
   {
     "produto": "Relógio de Pulso",
     "marca": "Casio",
     "preco": 59.99,
     "estoque": 70,
-    "cor": "Preto"
+    "cor": "Preto",
+    "data_lancamento": "2022-06-20",
+    "classificacao": 4,
+    "peso": 0.1
   },
   {
     "produto": "Fogão a Gás",
     "marca": "Brastemp",
     "preco": 399.99,
     "estoque": 15,
-    "cor": "Inox"
+    "cor": "Inox",
+    "data_lancamento": "2022-05-10",
+    "classificacao": 4,
+    "peso": 20.0
   },
   {
     "produto": "Panela de Pressão",
     "marca": "Tramontina",
     "preco": 39.99,
     "estoque": 50,
-    "cor": "Vermelho"
+    "cor": "Vermelho",
+    "data_lancamento": "2022-04-15",
+    "classificacao": 4,
+    "peso": 2.5
   },
   {
     "produto": "Cadeira de Escritório",
     "marca": "Herman Miller",
     "preco": 499.99,
     "estoque": 10,
-    "cor": "Preto"
+    "cor": "Preto",
+    "data_lancamento": "2022-03-22",
+    "classificacao": 5,
+    "peso": 12.0
   },
   {
     "produto": "Bicicleta de Montanha",
     "marca": "Trek",
     "preco": 699.99,
     "estoque": 20,
-    "cor": "Vermelho"
+    "cor": "Vermelho",
+    "data_lancamento": "2022-02-10",
+    "classificacao": 4,
+    "peso": 14.5
   }
 ]
+
 db.informatica.insertMany(informatica)
