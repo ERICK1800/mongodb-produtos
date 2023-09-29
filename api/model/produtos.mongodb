@@ -2,16 +2,6 @@ use("Produtos")
 db.informatica.drop()
 const informatica = [
   {
-    "produto": "Smartphone",
-    "marca": "Samsung",
-    "preco": 799.99,
-    "estoque": 50,
-    "cor": "Preto",
-    "data_lancamento": "2023-09-25",
-    "classificacao": 4,
-    "peso": 0.35
-  },
-  {
     "produto": "Notebook",
     "marca": "Dell",
     "preco": 1299.99,
@@ -52,36 +42,6 @@ const informatica = [
     "peso": 0.8
   },
   {
-    "produto": "Televisão",
-    "marca": "LG",
-    "preco": 899.99,
-    "estoque": 25,
-    "cor": "Prata",
-    "data_lancamento": "2023-04-10",
-    "classificacao": 4,
-    "peso": 7.0
-  },
-  {
-    "produto": "Impressora",
-    "marca": "Epson",
-    "preco": 199.99,
-    "estoque": 40,
-    "cor": "Branco",
-    "data_lancamento": "2023-03-22",
-    "classificacao": 3,
-    "peso": 4.5
-  },
-  {
-    "produto": "Console de Jogos",
-    "marca": "Microsoft",
-    "preco": 299.99,
-    "estoque": 10,
-    "cor": "Preto",
-    "data_lancamento": "2023-02-15",
-    "classificacao": 5,
-    "peso": 2.2
-  },
-  {
     "produto": "Mouse sem Fio",
     "marca": "Logitech",
     "preco": 29.99,
@@ -102,84 +62,114 @@ const informatica = [
     "peso": 1.1
   },
   {
-    "produto": "Caixa de Som Bluetooth",
-    "marca": "JBL",
-    "preco": 69.99,
-    "estoque": 60,
-    "cor": "Vermelho",
-    "data_lancamento": "2022-11-15",
-    "classificacao": 4,
-    "peso": 0.8
-  },
-  {
-    "produto": "Máquina de Lavar Roupa",
-    "marca": "Whirlpool",
-    "preco": 499.99,
-    "estoque": 20,
-    "cor": "Branco",
-    "data_lancamento": "2022-10-10",
-    "classificacao": 4,
-    "peso": 48.0
-  },
-  {
-    "produto": "Liquidificador",
-    "marca": "Philips",
-    "preco": 49.99,
-    "estoque": 90,
-    "cor": "Azul",
-    "data_lancamento": "2022-09-05",
-    "classificacao": 3,
-    "peso": 2.0
-  },
-  {
-    "produto": "Mochila",
-    "marca": "North Face",
-    "preco": 79.99,
-    "estoque": 30,
-    "cor": "Verde",
-    "data_lancamento": "2022-08-01",
-    "classificacao": 4,
-    "peso": 0.7
-  },
-  {
-    "produto": "Sapatos de Corrida",
-    "marca": "Nike",
-    "preco": 129.99,
+    "produto": "Impressora",
+    "marca": "Epson",
+    "preco": 199.99,
     "estoque": 40,
     "cor": "Branco",
-    "data_lancamento": "2022-07-15",
+    "data_lancamento": "2022-11-15",
+    "classificacao": 4,
+    "peso": 4.5
+  },
+  {
+    "produto": "Console de Jogos",
+    "marca": "Microsoft",
+    "preco": 299.99,
+    "estoque": 10,
+    "cor": "Preto",
+    "data_lancamento": "2022-10-10",
     "classificacao": 5,
+    "peso": 2.2
+  },
+  {
+    "produto": "Monitor",
+    "marca": "Samsung",
+    "preco": 399.99,
+    "estoque": 20,
+    "cor": "Preto",
+    "data_lancamento": "2022-09-05",
+    "classificacao": 4,
+    "peso": 5.0
+  },
+  {
+    "produto": "Roteador Wi-Fi",
+    "marca": "TP-Link",
+    "preco": 49.99,
+    "estoque": 60,
+    "cor": "Branco",
+    "data_lancamento": "2022-08-01",
+    "classificacao": 4,
     "peso": 0.3
   },
   {
-    "produto": "Relógio de Pulso",
-    "marca": "Casio",
-    "preco": 59.99,
-    "estoque": 70,
+    "produto": "Disco Rígido Externo",
+    "marca": "Seagate",
+    "preco": 79.99,
+    "estoque": 40,
+    "cor": "Prata",
+    "data_lancamento": "2022-07-15",
+    "classificacao": 5,
+    "peso": 0.2
+  },
+  {
+    "produto": "Monitor Gamer",
+    "marca": "Acer",
+    "preco": 499.99,
+    "estoque": 15,
     "cor": "Preto",
     "data_lancamento": "2022-06-20",
     "classificacao": 4,
+    "peso": 6.0
+  },
+  {
+    "produto": "Webcam",
+    "marca": "Logitech",
+    "preco": 59.99,
+    "estoque": 70,
+    "cor": "Preto",
+    "data_lancamento": "2022-05-10",
+    "classificacao": 4,
+    "peso": 0.05
+  },
+  {
+    "produto": "Hub USB",
+    "marca": "Belkin",
+    "preco": 19.99,
+    "estoque": 50,
+    "cor": "Branco",
+    "data_lancamento": "2022-04-15",
+    "classificacao": 3,
     "peso": 0.1
   },
   {
-    "produto": "Fogão a Gás",
-    "marca": "Brastemp",
-    "preco": 399.99,
-    "estoque": 15,
-    "cor": "Inox",
-    "data_lancamento": "2022-05-10",
-    "classificacao": 4,
-    "peso": 20.0
+    "produto": "Placa de Vídeo",
+    "marca": "NVIDIA",
+    "preco": 699.99,
+    "estoque": 10,
+    "cor": "Preto",
+    "data_lancamento": "2022-03-22",
+    "classificacao": 5,
+    "peso": 1.5
   },
   {
-    "produto": "Panela de Pressão",
-    "marca": "Tramontina",
+    "produto": "Rato Ergonómico",
+    "marca": "Kensington",
     "preco": 39.99,
-    "estoque": 50,
-    "cor": "Vermelho",
-    "data_lancamento": "2022-04-15",
+    "estoque": 25,
+    "cor": "Preto",
+    "data_lancamento": "2022-02-10",
     "classificacao": 4,
-    "peso": 2.5
+    "peso": 0.2
+  },
+  {
+    "produto": "Teclado Ergonómico",
+    "marca": "Microsoft",
+    "preco": 49.99,
+    "estoque": 15,
+    "cor": "Preto",
+    "data_lancamento": "2022-01-05",
+    "classificacao": 4,
+    "peso": 0.8
   },
   {
     "produto": "Cadeira de Escritório",
@@ -187,19 +177,29 @@ const informatica = [
     "preco": 499.99,
     "estoque": 10,
     "cor": "Preto",
-    "data_lancamento": "2022-03-22",
+    "data_lancamento": "2021-12-15",
     "classificacao": 5,
     "peso": 12.0
   },
   {
-    "produto": "Bicicleta de Montanha",
-    "marca": "Trek",
-    "preco": 699.99,
+    "produto": "Caixa de Som Bluetooth",
+    "marca": "Bose",
+    "preco": 249.99,
     "estoque": 20,
-    "cor": "Vermelho",
-    "data_lancamento": "2022-02-10",
+    "cor": "Prata",
+    "data_lancamento": "2021-11-20",
     "classificacao": 4,
-    "peso": 14.5
+    "peso": 0.9
+  },
+  {
+    "produto": "Mesa de Computador",
+    "marca": "IKEA",
+    "preco": 79.99,
+    "estoque": 30,
+    "cor": "Branco",
+    "data_lancamento": "2021-10-25",
+    "classificacao": 4,
+    "peso": 15.0
   }
 ]
 
