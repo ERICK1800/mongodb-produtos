@@ -1,0 +1,48 @@
+@baseURL = http://localhost:4000/api/produtos
+
+// GET - Lista todos os produtos
+GET {{baseURL}}
+Content-Type: application/json
+
+###
+// GET - Lista de produto pela id
+GET {{baseURL}}/id/65172163c47b70780f4677ff
+Content-Type: application/json
+
+###
+// POST - Insere um novo registro
+POST {{baseURL}}
+Content-Type: application/json
+
+{
+  "produto": "Mouse Gamer",
+  "marca": "Razer",
+  "preco": 69.99,
+  "estoque": 50,
+  "cor": "Preto",
+  "data_lancamento": "2022-09-30",
+  "classificacao": 4,
+  "peso": 0.2
+}
+
+###
+// PUT - Altera o registro
+PUT {{baseURL}}
+Content-Type: application/json
+
+{
+    "_id": "65172163c47b70780f4677ff",
+    "produto": "Mouse Gamer",
+    "marca": "Razer",
+    "preco": 69.99,
+    "estoque": 40,
+    "cor": "Preto",
+    "data_lancamento": "2022-09-30",
+    "classificacao": 4,
+    "peso": 0.2
+}
+
+###
+// DELETE - Apaga um registro pela id
+DELETE {{baseURL}}/65172163c47b70780f4677ff
+Content-Type: application/json
