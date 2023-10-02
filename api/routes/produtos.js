@@ -98,58 +98,54 @@ router.get('/id/:id', async(req, res) => {
 
 /**
  * GET /api/produtos/produto/:produto
- * Lista os produtos de serviço pelo nome 
+ * Lista os produtos da loja pelo nome ou marca
  */
-router.get('/produto/:produto', async(req, res)=> {
-    try{
-        db.collection(nomeCollection)
-        .find({'produto': {$regex: req.params.nome, $options: "i"}})
-        .toArray((err, docs) => {
-            if(err){
-                res.status(400).json(err) // bad request
+router.get('/produto/:termo', async (req, res) => {
+    try {
+        const termo = req.params.termo;
+        db.collection(nomeCollection).find({
+            $or: [
+                { 'produto': { $regex: termo, $options: 'i' } },
+                { 'marca': { $regex: termo, $options: 'i' } }
+            ]
+        }).toArray((err, docs) => {
+            if (err) {
+                res.status(400).json(err);
             } else {
-                res.status(200).json(docs) // retorna o documento
+                res.status(200).json(docs);
             }
-        })
+        });
     } catch (err) {
-        res.status(500).json({"error": err.message})
+        res.status(500).json({ 'error': err.message });
     }
-})
+});
 
 /**
- * GET /api/produtos/marca/:marca
- * Lista os produtos pela marca 
+ * GET /api/produtos/produtos-filtrados?precoMax=##&classificacaoMin=#
+ * Lista os produtos da loja com o preço maximo e classificação mínima
  */
-router.get('/marca/:marca', async(req, res)=> {
-    try{
-        db.collection(nomeCollection)
-        .find({'cpf': {$eq: req.params.cpf}})
-        .toArray((err, docs) => {
-            if(err){
-                res.status(400).json(err) // bad request
-            } else {
-                res.status(200).json(docs) 
-            }
-        })
-    } catch (err) {
-        res.status(500).json({"error": err.message})
-    }
-})
+router.get('/produtos-filtrados', async (req, res) => {
+    try {
+        const precoMax = parseFloat(req.query.precoMax);
+        const classificacaoMin = parseInt(req.query.classificacaoMin);
 
-router.get("/preco/:preco", async (req, res) => {
-	try {
-		db.collection(nomeCollection)
-			.find({
-				preco: { $lte: req.params.preco },
-			})
-			.toArray((err, docs) => {
-				if (err) res.status(400).json(err); // bad request
-				else res.status(200).json(docs);
-			});
-	} catch (err) {
-		res.status(500).json({ error: err.message });
-	}
+        db.collection(nomeCollection).find({
+            $and: [
+                { 'preco': { $lte: precoMax } }, // Preço menor ou igual ao valor máximo
+                { 'classificacao': { $gte: classificacaoMin } } // Classificação maior ou igual ao valor mínimo
+            ]
+        }).toArray((err, docs) => {
+            if (err) {
+                res.status(400).json(err);
+            } else {
+                res.status(200).json(docs);
+            }
+        });
+    } catch (err) {
+        res.status(500).json({ 'error': err.message });
+    }
 });
+
 
 /*
 * POST /api/produtos

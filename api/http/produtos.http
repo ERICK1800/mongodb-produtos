@@ -6,7 +6,17 @@ Content-Type: application/json
 
 ###
 // GET - Lista de produto pela id
-GET {{baseURL}}/id/65172163c47b70780f4677ff
+GET {{baseURL}}/id/651a0c0c47d2848f555798ba
+Content-Type: application/json
+
+###
+// GET - Lista de produto pelo nome do produto ou marca
+GET {{baseURL}}/produto/Razer
+Content-Type: application/json
+
+###
+// GET - Lista de produto com o preço maximo e classificação mínima
+GET {{baseURL}}/produtos-filtrados?precoMax=69.99&classificacaoMin=4
 Content-Type: application/json
 
 ###
@@ -44,5 +54,5 @@ Content-Type: application/json
 
 ###
 // DELETE - Apaga um registro pela id
-DELETE {{baseURL}}/65172163c47b70780f4677ff
+DELETE {{baseURL}}/651a0c0c47d2848f555798ba
 Content-Type: application/json
