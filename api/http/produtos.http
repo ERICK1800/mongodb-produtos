@@ -3,26 +3,31 @@
 // GET - Lista todos os produtos
 GET {{baseURL}}
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1ZjkwNDkzYTVkNjliMzlmZjJhMGMxIn0sImlhdCI6MTcwMDc2MTY5NiwiZXhwIjoxNzAxMDIwODk2fQ.OTue-iPOv0HRGVBWLPQ5KSJdtXdugCKB5AV-6p1WxIE
 
 ###
 // GET - Lista de produto pela id
-GET {{baseURL}}/id/651a0c0c47d2848f555798ba
+GET {{baseURL}}/id/655f9448090346d22f28eca4
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1ZjkwNDkzYTVkNjliMzlmZjJhMGMxIn0sImlhdCI6MTcwMDc2MTY5NiwiZXhwIjoxNzAxMDIwODk2fQ.OTue-iPOv0HRGVBWLPQ5KSJdtXdugCKB5AV-6p1WxIE
 
 ###
 // GET - Lista de produto pelo nome do produto ou marca
 GET {{baseURL}}/produto/Razer
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1ZjkwNDkzYTVkNjliMzlmZjJhMGMxIn0sImlhdCI6MTcwMDc2MTY5NiwiZXhwIjoxNzAxMDIwODk2fQ.OTue-iPOv0HRGVBWLPQ5KSJdtXdugCKB5AV-6p1WxIE
 
 ###
 // GET - Lista de produto com o preço maximo e classificação mínima
 GET {{baseURL}}/produtos-filtrados?precoMax=69.99&classificacaoMin=4
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1ZjkwNDkzYTVkNjliMzlmZjJhMGMxIn0sImlhdCI6MTcwMDc2MTY5NiwiZXhwIjoxNzAxMDIwODk2fQ.OTue-iPOv0HRGVBWLPQ5KSJdtXdugCKB5AV-6p1WxIE
 
 ###
 // POST - Insere um novo registro
 POST {{baseURL}}
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1ZjkwNDkzYTVkNjliMzlmZjJhMGMxIn0sImlhdCI6MTcwMDc2MTY5NiwiZXhwIjoxNzAxMDIwODk2fQ.OTue-iPOv0HRGVBWLPQ5KSJdtXdugCKB5AV-6p1WxIE
 
 {
   "produto": "Mouse Gamer",
@@ -39,9 +44,10 @@ Content-Type: application/json
 // PUT - Altera o registro
 PUT {{baseURL}}
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1ZjkwNDkzYTVkNjliMzlmZjJhMGMxIn0sImlhdCI6MTcwMDc2MTY5NiwiZXhwIjoxNzAxMDIwODk2fQ.OTue-iPOv0HRGVBWLPQ5KSJdtXdugCKB5AV-6p1WxIE
 
 {
-    "_id": "65172163c47b70780f4677ff",
+    "_id": "655f9448090346d22f28eca4",
     "produto": "Mouse Gamer",
     "marca": "Razer",
     "preco": 69.99,
@@ -54,5 +60,6 @@ Content-Type: application/json
 
 ###
 // DELETE - Apaga um registro pela id
-DELETE {{baseURL}}/651a0c0c47d2848f555798ba
+DELETE {{baseURL}}/655f9448090346d22f28eca4
 Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1ZjkwNDkzYTVkNjliMzlmZjJhMGMxIn0sImlhdCI6MTcwMDc2MTY5NiwiZXhwIjoxNzAxMDIwODk2fQ.OTue-iPOv0HRGVBWLPQ5KSJdtXdugCKB5AV-6p1WxIE

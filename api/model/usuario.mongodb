@@ -1,0 +1,22 @@
+use("Produtos")
+db.usuario.drop()
+const usuario = [
+    {
+        'nome': 'Antônio Dias',
+        'email': 'antoniodias@gmail.com',
+        'senha': '@123Mudar',
+        'ativo': true,
+        'tipo': 'Cliente',
+        'avatar': 'https://ui-avatars.com/api/?name=Antonio+Dias&&background=random'
+    },
+    {
+        'nome': 'Carlos Nascimento',
+        'email': 'carlosnascimento@gmail.com',
+        'senha': '@123Mudar',
+        'ativo': false,
+        'tipo': 'Cliente',
+        'avatar': 'https://ui-avatars.com/api/?name=Carlos+Nascimento&&background=random'
+    }
+]
+
+db.usuarios.insertMany(usuarios)

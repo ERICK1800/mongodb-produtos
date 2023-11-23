@@ -1,0 +1,50 @@
+// Teste das Restrições REST dos usuários
+
+@baseURL = http://localhost:4000/api/usuarios
+
+###
+POST {{baseURL}}
+Content-Type: application/json
+
+{
+    "nome": "Carlos Uruguaio",
+    "email": "carlosuruguaio@gmail.com",
+    "senha": "@123Mudar"
+}
+
+###
+// POST - Efetuar o login
+POST {{baseURL}}/login
+Content-Type: application/json
+
+{
+    "email": "carlosuruguaio@gmail.com",
+    "senha": "@123Mudar"
+}
+
+###
+// GET - Usuários
+GET {{baseURL}}
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1ZjkwNDkzYTVkNjliMzlmZjJhMGMxIn0sImlhdCI6MTcwMDc2MTY5NiwiZXhwIjoxNzAxMDIwODk2fQ.OTue-iPOv0HRGVBWLPQ5KSJdtXdugCKB5AV-6p1WxIE
+
+###
+// DELETE - Usuários
+DELETE {{baseURL}}/65368922e5306c9b9d619520
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1ZjkwNDkzYTVkNjliMzlmZjJhMGMxIn0sImlhdCI6MTcwMDc2MTY5NiwiZXhwIjoxNzAxMDIwODk2fQ.OTue-iPOv0HRGVBWLPQ5KSJdtXdugCKB5AV-6p1WxIE
+
+###
+// PUT - Usuários
+PUT {{baseURL}}/65368922e5306c9b9d619520
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1ZjkwNDkzYTVkNjliMzlmZjJhMGMxIn0sImlhdCI6MTcwMDc2MTY5NiwiZXhwIjoxNzAxMDIwODk2fQ.OTue-iPOv0HRGVBWLPQ5KSJdtXdugCKB5AV-6p1WxIE
+
+{
+    "nome": "Carlos Uruguaio",
+    "email": "carlosuruguaio2@gmail.com",
+    "ativo": true,
+    "tipo": "Cliente",
+    "senha": "@123Mudar2",
+    "avatar": "https://ui-avatars.com/api/?name=Carlos+Uruguaio+2&&background=random"
+}

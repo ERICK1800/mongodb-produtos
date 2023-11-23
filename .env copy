@@ -1,2 +1,4 @@
 MONGODB_URI = mongodb+srv://FatecItu:Fatec2023@fatecitu.wfxhacs.mongodb.net/
-MONGODB_DB = FatecItu
+MONGODB_DB = Produtos
+SECRET_KEY = !@Produtos@!
+EXPIRES_IN = 72h

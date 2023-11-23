@@ -2,6 +2,8 @@ import express from "express"
 import { connectToDatabase } from '../utils/mongodb.js'
 import { check, ExpressValidator, validationResult } from "express-validator"
 
+import auth from "../middleware/auth.js"
+
 const router = express.Router()
 const {db, ObjectId} = await connectToDatabase()
 const nomeCollection = 'informatica'
@@ -60,7 +62,7 @@ const validaProduto = [
 * GET /api/produtos
 * Lista todos os produtos da loja
 */
-router.get('/', async(req, res) => {
+router.get('/', auth, async(req, res) => {
     try{
         db.collection(nomeCollection).find().sort({produto: 1}).toArray((err, docs) => {
             if(!err){
@@ -82,7 +84,7 @@ router.get('/', async(req, res) => {
 * GET /api/produtos/id/:id
 * Lista todos os produtos da loja
 */
-router.get('/id/:id', async(req, res) => {
+router.get('/id/:id', auth, async(req, res) => {
     try{
         db.collection(nomeCollection).find({'_id': {$eq: ObjectId(req.params.id)}}).toArray((err, docs) => {
             if(err){
@@ -100,7 +102,7 @@ router.get('/id/:id', async(req, res) => {
  * GET /api/produtos/produto/:produto
  * Lista os produtos da loja pelo nome ou marca
  */
-router.get('/produto/:termo', async (req, res) => {
+router.get('/produto/:termo', auth, async (req, res) => {
     try {
         const termo = req.params.termo;
         db.collection(nomeCollection).find({
@@ -124,7 +126,7 @@ router.get('/produto/:termo', async (req, res) => {
  * GET /api/produtos/produtos-filtrados?precoMax=##&classificacaoMin=#
  * Lista os produtos da loja com o preço maximo e classificação mínima
  */
-router.get('/produtos-filtrados', async (req, res) => {
+router.get('/produtos-filtrados', auth, async (req, res) => {
     try {
         const precoMax = parseFloat(req.query.precoMax);
         const classificacaoMin = parseInt(req.query.classificacaoMin);
@@ -151,7 +153,7 @@ router.get('/produtos-filtrados', async (req, res) => {
 * POST /api/produtos
 * Insere um novo produto na loja
 */
-router.post('/', validaProduto, async(req, res) =>{
+router.post('/', auth, validaProduto, async(req, res) =>{
     const errors = validationResult(req)
     if(!errors.isEmpty()){
         return res.status(400).json(({
@@ -169,7 +171,7 @@ router.post('/', validaProduto, async(req, res) =>{
 * PUT /api/produtos
 * Altera um produto da loja
 */
-router.put('/', validaProduto, async(req, res) =>{
+router.put('/', auth, validaProduto, async(req, res) =>{
     let idDocumento = req.body._id
     delete req.body._id
 
@@ -190,7 +192,7 @@ router.put('/', validaProduto, async(req, res) =>{
 * DELET /api/produtos/:id
 * Apaga o produto da loja pela id
 */
-router.delete('/:id', async(req, res) => {
+router.delete('/:id', auth, async(req, res) => {
     await db.collection(nomeCollection)
     .deleteOne({"_id": {$eq: ObjectId(req.params.id)}})
     .then(result => res.status(200).send(result))
