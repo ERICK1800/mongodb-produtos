@@ -14,7 +14,7 @@ app.use(express.json())
 
 app.use('/', express.static('public'))
 
-app.use('/favicon.ico', express.static('public/imagens/pc.png'))
+app.use('/favicon.ico', express.static('public/imagens/loja.gif'))
 
 app.use('/api/produtos', rotasProdutos)
 app.use('/api/usuarios', rotasUsuarios)

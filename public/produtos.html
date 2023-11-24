@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/estilo.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="imagens/loja.gif" />
+</head>
+<body onload="carregaProdutos()">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Loja de Informática</a>
+        <div class="navbar-collapse justify-content-between">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="produtos.html">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="usuario.html">Usuários</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item m-3">
+                    <a class="btn btn-danger" href="#" id="logoutBtn">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Formulário -->
+                <h4 class="text-primary mt-3">Cadastro de Produtos</h4>
+                <form id="formProduto" method="post" class="shadow-lg p-3">
+                <!-- Id -->
+                <input type="hidden" id="id" name="id" />
+                <!-- Nome do Produto -->
+                <div class="mb-3">
+                    <label for="produto" class="form-label">Nome do Produto</label>
+                    <input type="text" class="form-control" id="produto" name="produto" placeholder="Nome do Produto" autofocus/>
+                </div>
+                <!-- Marca -->
+                <div class="mb-3">
+                    <label for="marca" class="form-label">Marca</label>
+                    <input type="text" class="form-control" id="marca" name="marca" placeholder="Marca" />
+                </div>
+                <!-- Preço (R$) -->
+                <div class="mb-3">
+                    <label for="preco" class="form-label">Preço</label>
+                    <input type="text" class="form-control" id="preco" name="preco"  placeholder="Ex: 9.99"/>
+                </div>
+                <!-- Estoque -->
+                <div class="mb-3">
+                    <label for="estoque" class="form-label">Estoque</label>
+                    <input type="number" class="form-control" id="estoque" name="estoque"  placeholder="Ex: 10"/>
+                </div>
+                <!-- Cor do Produto -->
+                <div class="mb-3">
+                    <label for="cor" class="form-label">Cor do Produto</label>
+                    <input type="text" class="form-control" id="cor" name="cor"  placeholder="Ex: Vermelho"/>
+                </div>
+                <!-- Data de Lançamento -->
+                <div class="mb-3">
+                    <label for="data_lancamento" class="form-label">Data de Lançamento</label>
+                    <input type="date" class="form-control" id="data_lancamento" name="data_lancamento"/>
+                </div>
+                <!-- Classificação -->
+                <div class="mb-3">
+                    <label for="classificacao" class="form-label">Classificação</label>
+                    <input type="number" class="form-control" id="classificacao" name="classificacao"  placeholder="Ex: 5"/>
+                </div>
+                <!-- Peso (Kg) -->
+                <div class="mb-3">
+                    <label for="peso" class="form-label">Peso</label>
+                    <input type="text" class="form-control" id="peso" name="peso"  placeholder="Ex: 1.5"/>
+                </div>
+                <!-- Botões-->
+                <div class="my-5">
+                    <button class="btn btn-success" id="salvar" type="submit">
+                    <i class="bi bi-save"></i> Salvar
+                    </button>
+                    <button class="btn btn-danger" id="limpar" type="reset">
+                    <i class="bi bi-x"></i> Limpar
+                    </button>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <h4 class="text-primary mt-3">Relação dos Produdos da Loja</h4>
+                <table class="table table-bordered shadow-lg">
+                <thead>
+                    <tr class="table-primary">
+                    <th>Nome do Produto</th>
+                    <th>Marca</th>
+                    <th>Preço (R$)</th>
+                    <th>Estoque</th>              
+                    <th>Cor do Produto</th>
+                    <th>Data de Lançamento</th> 
+                    <th>Classificação</th> 
+                    <th>Peso (Kg)</th>
+                    <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody id="dadosTabela"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modalMensagem" tabindex="-1" role="dialog">
+        <div class="modal-dialog bg-danger" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">Mensagem</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="mensagem"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Rodapé -->
+    <footer class="bg-primary text-white text-center py-3 position-fixed fixed-bottom">
+        &copy; 2023 Fatec Itu. Todos os direitos reservados.
+    </footer>
+    <!-- JS -->
+    <script src="js/validatoken.js"></script>
+    <script src="js/produtos.js"></script>
+</body>
+</html>

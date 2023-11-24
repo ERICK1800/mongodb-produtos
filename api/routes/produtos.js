@@ -13,49 +13,49 @@ const validaProduto = [
             .not()
             .isEmpty()
             .trim()
-            .withMessage("É obrigatório informar o produto")
+            .withMessage("É obrigatório informar o produto.")
             .isAlphanumeric('pt-BR', {ignore: '/. '}),
     check('marca')
             .not()
             .isEmpty()
             .trim()
-            .withMessage("É obrigatório informar qual a marca"),
+            .withMessage("É obrigatório informar qual a marca."),
     check('preco')
             .not()
             .isEmpty()
             .trim()
-            .withMessage("É obrigatório informar o preco")
-            .isNumeric()
-            .withMessage('O preço só deve conter números'),
+            .withMessage("É obrigatório informar o preco.")
+            .isFloat({ locale: 'pt-BR' })
+            .withMessage('O preço só deve conter números.'),
     check('estoque')
             .not()
             .isEmpty()
             .trim()
-            .withMessage("É obrigatório informar a quantidade no estoque")
+            .withMessage("É obrigatório informar a quantidade no estoque.")
             .isNumeric()
-            .withMessage('A quantidade informada só deve conter números'),
+            .withMessage('A quantidade informada só deve conter números.'),
     check('cor')
             .not()
             .isEmpty()
             .trim()
-            .withMessage("É obrigatório informar qual a cor do produto"),
+            .withMessage("É obrigatório informar qual a cor do produto."),
     check('data_lancamento')
             .not()
             .isEmpty()
             .trim()
-            .withMessage('É obrigatório informar a Data de nascimento'),
+            .withMessage('É obrigatório informar a Data de nascimento.'),
     check('classificacao')
             .not()
             .isEmpty()
             .trim()
-            .withMessage("É obrigatório informar qual a classificação do produto"),
+            .withMessage("É obrigatório informar qual a classificação do produto."),
     check('peso')
             .not()
             .isEmpty()
             .trim()
-            .withMessage("É obrigatório informar o peso do produtp")
-            .isNumeric()
-            .withMessage('O peso só deve conter números'),
+            .withMessage("É obrigatório informar o peso do produto.")
+            .isFloat({ locale: 'pt-BR' })
+            .withMessage('O peso só deve conter números.')
 ]
 
 /*
