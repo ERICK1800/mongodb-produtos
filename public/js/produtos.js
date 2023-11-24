@@ -96,41 +96,61 @@ async function salvaProduto(produto) {
     }
 }
 
-async function carregaProdutos() {
-    const tabela = document.getElementById('dadosTabela')
-    tabela.innerHTML = ''
-    await fetch(`${urlBase}/produtos`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            "access-token": access_token
-        }
-    })
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(produto => {
-                tabela.innerHTML += `
+async function carregaProdutos(filtroNomeMarca = null, filtroPrecoMax = null, filtroClassificacaoMin = null) {
+    console.log(`Chamando carregaProdutos com filtros: ${filtroNomeMarca} ${filtroPrecoMax} ${filtroClassificacaoMin}`);
+
+    const tabela = document.getElementById('dadosTabela');
+    tabela.innerHTML = '';
+
+    try {
+        let url = `${urlBase}/produtos`;
+
+        if (filtroNomeMarca !== null) {
+            // Se o filtroNomeMarca não for nulo, usamos a rota de filtro
+            url += `/produto/${filtroNomeMarca}`;
+        } /*else if (filtroPrecoMax !== null && filtroClassificacaoMin !== null) {
+            // Se o filtroPrecoMax e o filtroClassificacaoMin não forem nulos, usamos a rota de filtro
+            url += `/produtos-filtrados?precoMax=${parseFloat(filtroPrecoMax)}&classificacaoMin=${parseInt(filtroClassificacaoMin)}`;
+        }*/
+        console.log(url);
+
+        const response = await fetch(url, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "access-token": access_token
+            }
+        });
+
+        const data = await response.json();
+        console.log(url);
+        console.log("Resposta da API:", data);
+
+        data.forEach(produto => {
+            tabela.innerHTML += `
                 <tr>
-                   <td>${produto.produto}</td>
-                   <td>${produto.marca}</td>
-                   <td>${produto.preco}</td>
-                   <td>${produto.estoque}</td>                   
-                   <td>${produto.cor}</td> 
-                   <td>${produto.data_lancamento}</td> 
-                   <td>${produto.classificacao}</td> 
-                   <td>${produto.peso}</td> 
-                   <td>
-                       <button class='btn btn-danger btn-sm' onclick='removeProduto("${produto._id}")'>🗑 Excluir </button>
-                       <button class='btn btn-warning btn-sm' onclick='buscaProdutoPeloId("${produto._id}")'>📝 Editar </button>
+                    <td>${produto.produto}</td>
+                    <td>${produto.marca}</td>
+                    <td>${produto.preco}</td>
+                    <td>${produto.estoque}</td>                   
+                    <td>${produto.cor}</td> 
+                    <td>${produto.data_lancamento}</td> 
+                    <td>${produto.classificacao}</td> 
+                    <td>${produto.peso}</td> 
+                    <td>
+                        <button class='btn btn-danger btn-sm' onclick='removeProduto("${produto._id}")'>🗑 Excluir </button>
+                        <button class='btn btn-warning btn-sm' onclick='buscaProdutoPeloId("${produto._id}")'>📝 Editar </button>
                     </td>           
                 </tr>
-                `
-            })
-        })
-        .catch(error => {
-            document.getElementById("mensagem").innerHTML = `<span class='text-danger'>Erro ao salvar o produto: ${error.message}</span>`
-            resultadoModal.show();
+            `;
         });
+    } catch (error) {
+        console.error(`Erro na chamada da API: ${error.message}`);
+        res.status(500).json({ 'error': error.message });
+        console.error('Erro ao carregar os produtos:', error.message);
+        document.getElementById("mensagem").innerHTML = `<span class='text-danger'>Erro ao carregar os produtos: ${error.message}</span>`;
+        resultadoModal.show();
+    }
 }
 
 async function removeProduto(id) {
@@ -182,3 +202,28 @@ async function buscaProdutoPeloId(id) {
             resultadoModal.show();
         });
 }
+
+document.getElementById('btnFiltrarNomeMarca').addEventListener('click', function (event) {
+    event.preventDefault();
+    const filtroNomeMarca = document.getElementById('filtroNomeMarca').value.trim();
+    carregaProdutos(
+        filtroNomeMarca === "" ? null : filtroNomeMarca,
+        null,
+        null
+    );
+});
+/*
+document.getElementById('btnFiltrarPrecoMaxClassificacaoMin').addEventListener('click', function (event) {
+    event.preventDefault();
+    const filtroPrecoMax = document.getElementById('filtroPrecoMax').value;
+    const filtroClassificacaoMin = document.getElementById('filtroClassificacaoMin').value;
+
+    console.log(`Filtros: ${filtroPrecoMax} ${filtroClassificacaoMin} null`);
+
+    carregaProdutos(
+        filtroPrecoMax === "" ? null : parseFloat(filtroPrecoMax),
+        filtroClassificacaoMin === "" ? null : parseInt(filtroClassificacaoMin),
+        null
+    );
+});
+*/

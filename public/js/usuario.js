@@ -109,7 +109,6 @@ async function carregaUsuarios() {
                 <tr>
                    <td>${usuario.nome}</td>
                    <td>${usuario.email}</td>
-                   <td>${usuario.senha}</td>
                    <td>${usuario.ativo}</td>                   
                    <td>${usuario.tipo}</td> 
                    <td>${usuario.avatar}</td>

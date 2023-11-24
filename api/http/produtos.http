@@ -19,7 +19,7 @@ access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1Z
 
 ###
 // GET - Lista de produto com o preço maximo e classificação mínima
-GET {{baseURL}}/produtos-filtrados?precoMax=69.99&classificacaoMin=4
+GET {{baseURL}}/produtos-filtrados?precoMax=200.22&classificacaoMin=2
 Content-Type: application/json
 access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1ZjkwNDkzYTVkNjliMzlmZjJhMGMxIn0sImlhdCI6MTcwMDc2MTY5NiwiZXhwIjoxNzAxMDIwODk2fQ.OTue-iPOv0HRGVBWLPQ5KSJdtXdugCKB5AV-6p1WxIE
 
