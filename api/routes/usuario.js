@@ -137,6 +137,24 @@ router.get('/', auth, async(req, res) => {
     }
 })
 
+/*
+* Get /api/usuarios/id/:id
+* Lista todos os usuarios da loja
+*/
+router.get('/id/:id', auth, async(req, res) => {
+    try{
+        db.collection(nomeCollection).find({'_id': {$eq: ObjectId(req.params.id)}}).toArray((err, docs) => {
+            if(err){
+                res.status(400).json(err)
+            }else{
+                res.status(200).json(docs)
+            }
+        })
+    }catch(err){
+        res.status(500).json({"error": err.message})
+    }
+})
+
 /* Delete /usuarios
 Removo o usuário pelo id. Necessita de token
 */

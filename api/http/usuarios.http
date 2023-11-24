@@ -29,6 +29,12 @@ Content-Type: application/json
 access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1ZjkwNDkzYTVkNjliMzlmZjJhMGMxIn0sImlhdCI6MTcwMDc2MTY5NiwiZXhwIjoxNzAxMDIwODk2fQ.OTue-iPOv0HRGVBWLPQ5KSJdtXdugCKB5AV-6p1WxIE
 
 ###
+// GET - Lista de usuários pela id
+GET {{baseURL}}/id/655f90493a5d69b39ff2a0c1
+Content-Type: application/json
+access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoiNjU1ZjkwNDkzYTVkNjliMzlmZjJhMGMxIn0sImlhdCI6MTcwMDc2MTY5NiwiZXhwIjoxNzAxMDIwODk2fQ.OTue-iPOv0HRGVBWLPQ5KSJdtXdugCKB5AV-6p1WxIE
+
+###
 // DELETE - Usuários
 DELETE {{baseURL}}/65368922e5306c9b9d619520
 Content-Type: application/json
