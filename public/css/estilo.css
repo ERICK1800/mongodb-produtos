@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o cabeçalho/nav */
+.navbar {
+    background-color: #007bff; /* Cor de fundo da barra de navegação */
+}
+
+.navbar-brand {
+    font-size: 1.5rem; /* Tamanho da fonte do logotipo da loja */
+}
+
+.navbar-nav .nav-link {
+    color: #fff; /* Cor do texto dos links no menu */
+    margin-right: 15px; /* Espaçamento entre os links no menu */
+}
+
+/* Estilo para a seção principal */
+.container {
+    padding: 50px; /* Espaçamento interno na seção principal */
+}
+
+/* Estilo para o rodapé */
+footer {
+    background-color: #007bff; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto do rodapé */
+    font-size: 0.8rem; /* Tamanho da fonte do texto do rodapé */
+}
+
+/* Adicionando espaçamento na parte superior do rodapé */
+body {
+    margin-bottom: 50px;
+}
+
+/* Estilo para o formulário de cadastro de produtos */
+#formProduto {
+    background-color: #fff; /* Cor de fundo do formulário */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilo para o formulário de cadastro de usuários */
+#formUsuario {
+    background-color: #fff; /* Cor de fundo do formulário */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilo para os botões do formulário */
+.my-5 button {
+    margin-right: 10px; /* Espaçamento à direita entre os botões */
+}
+
+/* Estilo para a tabela */
+.table-bordered {
+    margin-top: 20px; /* Espaçamento superior da tabela */
+}
+
+/* Estilo para o rodapé da página de cadastro */
+footer {
+    margin-top: 20px; /* Espaçamento superior do rodapé */
+}
+
+/* Estilo para o modal de mensagem */
+#modalMensagem {
+    color: #fff; /* Cor do texto no modal */
+}
+
+#modalMensagem .modal-content {
+    background-color: #dc3545; /* Cor de fundo do modal */
+}
+
+#modalMensagem .modal-header {
+    border-bottom: 2px solid #fff; /* Borda inferior do cabeçalho do modal */
+}
+
+/* Estilo para o card de cadastro */
+.card {
+    margin-top: 50px; /* Espaçamento superior do card */
+}
+
+.card-header {
+    background-color:#007bff; /* Cor de fundo do cabeçalho do card */
+    color: #fff; /* Cor do texto do cabeçalho do card */
+}
+
+.card-body {
+    padding: 20px; /* Espaçamento interno do corpo do card */
+}
+
+
