@@ -5,8 +5,8 @@
 https://mongodb-produtos.vercel.app
 
 ## 🎒Íntegrantes
-1- Eric Bacan
-2- Erick Lima
+- Eric Bacan
+- Erick Lima
 
 ## 🗝️Informações Básicas
 É necessário adicionar a chave abaixo no seu arquivo ```package.json```
